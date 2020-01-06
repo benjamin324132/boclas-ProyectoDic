@@ -9,7 +9,6 @@ import MultiStep from "./editor/stepMenu";
 const firebase = require("firebase");
 require("firebase/firestore");
 
-
 class App extends React.Component {
   constructor(props) {
     super();
@@ -38,7 +37,15 @@ class App extends React.Component {
           />
         ) : (
           <>
-            <Box component="span" m={0}>
+            <Box
+              component="span"
+              m={0}
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end"
+              }}
+            >
               <Button
                 style={{ margin: "6px" }}
                 onClick={() =>
@@ -77,7 +84,7 @@ class App extends React.Component {
         console.log("App.js componentDidMount", notes);
         this.setState({ notes: notes });
       });
-      firebase
+    firebase
       .firestore()
       .collection("datosAutocompletado")
       .orderBy("text", "asc")
@@ -91,10 +98,6 @@ class App extends React.Component {
         this.setState({ datosAutoc });
       });
   };
-
-
-
-
 
   selectNote = async (note, index) => {
     await this.setState({

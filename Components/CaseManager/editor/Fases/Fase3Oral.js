@@ -232,7 +232,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha de Prst. de Demanda"
+                label="Prst. de Demanda"
                 value={this.state.fechaPrestDem}
                 onChange={this.handlePrestDem}
                 KeyboardButtonProps={{
@@ -277,7 +277,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Radic. Demanda"
+                label="Radic. Demanda"
                 value={this.state.fechaRadicDem}
                 onChange={this.handleRadicDeman}
                 KeyboardButtonProps={{
@@ -322,7 +322,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha de Emplazamiento"
+                label="Emplazamiento"
                 value={this.state.fechaEmplazam}
                 onChange={this.handleEmplaza}
                 KeyboardButtonProps={{
@@ -367,7 +367,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Contest. Demanda"
+                label="Contest. Demanda"
                 value={this.state.fechaContestDem}
                 onChange={this.handleContestDeman}
                 KeyboardButtonProps={{
@@ -412,7 +412,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Admis. Contest. Demanda"
+                label="Admis. Contest. Demanda"
                 value={this.state.fechaAdmisConte}
                 onChange={this.handleAdmisiContest}
                 KeyboardButtonProps={{
@@ -457,7 +457,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Contest. Vista Contest."
+                label="*Contest. Vista Contest."
                 value={this.state.fechaContVistaConte}
                 onChange={this.handleContestVistContest}
                 KeyboardButtonProps={{
@@ -502,7 +502,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Admis. Contest. Vista..."
+                label="Admis. Contest. Vista..."
                 value={this.state.fechaAdmisConteVist}
                 onChange={this.handleAdisiContestLitis}
                 KeyboardButtonProps={{
@@ -547,7 +547,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Audiencia Preliminar"
+                label="*Audiencia Preliminar"
                 value={this.state.fechaAudiePrelim}
                 onChange={this.handleAudienPrel}
                 KeyboardButtonProps={{
@@ -592,7 +592,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Audiencia Juicio"
+                label="*Audiencia Juicio"
                 value={this.state.fechaAudieJuicio}
                 onChange={this.handleAudiJuic}
                 KeyboardButtonProps={{
@@ -637,7 +637,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Sentencia"
+                label="Sentencia"
                 value={this.state.fechaSentencia}
                 onChange={this.handleSentencia}
                 KeyboardButtonProps={{
@@ -682,7 +682,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Present. Amparo"
+                label="*Present. Amparo"
                 value={this.state.fechaPrestAmpar}
                 onChange={this.handlePresentAmp}
                 KeyboardButtonProps={{
@@ -727,7 +727,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Ejecutoria Amparo"
+                label="Ejecutoria Amparo"
                 value={this.state.fechaEjecuAmpar}
                 onChange={this.handleEjecAmpa}
                 KeyboardButtonProps={{
@@ -772,7 +772,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Cumplimentadora"
+                label="Cumplimentadora"
                 value={this.state.fechaCumplim}
                 onChange={this.handleCumpliment}
                 KeyboardButtonProps={{
@@ -858,7 +858,7 @@ class Etapa3Oral extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Cumplimentadora"
+                label="Cumplimentadora"
                 value={this.state.fechaCumplim2}
                 onChange={this.handleCumpliment2}
                 KeyboardButtonProps={{

@@ -420,14 +420,6 @@ class Etapa3Merc extends React.Component {
                 margin="normal"
                 variant="outlined"
               />
-              {/*<TextField
-              id="outlined-name"
-              label="Nombre del juzgado"
-              value={this.state.nombNumJuz}
-              onChange={e => this.setState({ nombNumJuz: e.target.value })}
-              margin="normal"
-              variant="outlined"
-            />*/}
               <Autocomplete
                 update={this.updateJuzgado}
                 onCloseAutocomplete={this.onCloseAutocompleteJuzgado} 
@@ -458,7 +450,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha de Prst. de Demanda"
+                label="Presentacion de Demanda"
                 value={this.state.fechaPrestDem}
                 onChange={this.handlePrestDem}
                 KeyboardButtonProps={{
@@ -503,7 +495,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Radic. Demanda"
+                label="Radicacion de Demanda"
                 value={this.state.fechaRadicDem}
                 onChange={this.handleRadicDeman}
                 KeyboardButtonProps={{
@@ -548,7 +540,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha de Emplazamiento"
+                label="Emplazamiento"
                 value={this.state.fechaEmplazam}
                 onChange={this.handleEmplaza}
                 KeyboardButtonProps={{
@@ -593,7 +585,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Contest. Demanda"
+                label="Contestacion de Demanda"
                 value={this.state.fechaContestDem}
                 onChange={this.handleContestDeman}
                 KeyboardButtonProps={{
@@ -638,7 +630,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Admis. Contest. Demanda"
+                label="Admis. Contest. Demanda"
                 value={this.state.fechaAdmisConte}
                 onChange={this.handleAdmisiContest}
                 KeyboardButtonProps={{
@@ -683,7 +675,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Contest. Vista Contest."
+                label="*Contest. Vista Contest."
                 value={this.state.fechaContVistaConte}
                 onChange={this.handleContestVistContest}
                 KeyboardButtonProps={{
@@ -728,7 +720,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Admis. Contest. Vista..."
+                label="Admis. Contest. Vista..."
                 value={this.state.fechaAdmisConteVist}
                 onChange={this.handleAdisiContestLitis}
                 KeyboardButtonProps={{
@@ -773,7 +765,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Impugnacion Documento"
+                label="Impugnacion Documento"
                 value={this.state.fechaImpugnDoc}
                 onChange={this.handleImpugnDoc}
                 KeyboardButtonProps={{
@@ -818,7 +810,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Ofrec. Pruebas Demand."
+                label=" Ofrecimiento de Pruebas Demand."
                 value={this.state.fechaOfrecPrueDem}
                 onChange={this.handleOfrecPruebDem}
                 KeyboardButtonProps={{
@@ -863,7 +855,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Auto Admite Actora"
+                label="*Auto Admite Actora"
                 value={this.state.fechaAutoAdmiActora}
                 onChange={this.handleAutoAdmitAct}
                 KeyboardButtonProps={{
@@ -917,7 +909,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Confesional"
+                label="*Confesional"
                 value={this.state.fechaPDConfesional}
                 onChange={this.handlePDConfesional}
                 KeyboardButtonProps={{
@@ -932,7 +924,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Testimonial"
+                label="*Testimonial"
                 value={this.state.fechaPDTestimonial}
                 onChange={this.handlePDTestimonial}
                 KeyboardButtonProps={{
@@ -947,7 +939,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Declaracion de Parte"
+                label="*Declaracion de Parte"
                 value={this.state.fechaPDDecParte}
                 onChange={this.handlePDDecParte}
                 KeyboardButtonProps={{
@@ -962,7 +954,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Declaracion de Tercero"
+                label="*Declaracion de Tercero"
                 value={this.state.fechaPDDecTercero}
                 onChange={this.handlePDDecTercero}
                 KeyboardButtonProps={{
@@ -977,7 +969,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Pericial"
+                label="*Pericial"
                 value={this.state.fechaPDPericial}
                 onChange={this.handlePDPericial}
                 KeyboardButtonProps={{
@@ -992,7 +984,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Inspeccion Judicial"
+                label="*Inspeccion Judicial"
                 value={this.state.fechaPDInspJudic}
                 onChange={this.handlePDInspJudic}
                 KeyboardButtonProps={{
@@ -1007,7 +999,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Recons. de Hechos"
+                label="*Reconstruccion de Hechos"
                 value={this.state.fechaPDRecHechos}
                 onChange={this.handlePDRecHechos}
                 KeyboardButtonProps={{
@@ -1022,7 +1014,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Ratif. Contenido y Firma"
+                label="*Ratificacion Contenido y Firma"
                 value={this.state.fechaPDRatifContFir}
                 onChange={this.handlePDRatifContFir}
                 KeyboardButtonProps={{
@@ -1039,7 +1031,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Auto Admite Demanda"
+                label="*Auto Admite Demanda"
                 value={this.state.fechaAutoAdmiDeman}
                 onChange={this.handleAutoAdmitDem}
                 KeyboardButtonProps={{
@@ -1086,7 +1078,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Confesional"
+                label="*Confesional"
                 value={this.state.fechaPD2Confesional}
                 onChange={this.handlePD2Confesional}
                 KeyboardButtonProps={{
@@ -1100,7 +1092,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Testimonial"
+                label="*Testimonial"
                 value={this.state.fechaPD2Testimonial}
                 onChange={this.handlePD2Testimonial}
                 KeyboardButtonProps={{
@@ -1114,7 +1106,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Declaracion de Parte"
+                label="*Declaracion de Parte"
                 value={this.state.fechaPD2DecParte}
                 onChange={this.handlePD2DecParte}
                 KeyboardButtonProps={{
@@ -1128,7 +1120,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Declaracion de Tercero"
+                label="*Declaracion de Tercero"
                 value={this.state.fechaPD2DecTercero}
                 onChange={this.handlePD2DecTercero}
                 KeyboardButtonProps={{
@@ -1142,7 +1134,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Pericial"
+                label="*Pericial"
                 value={this.state.fechaPD2Pericial}
                 onChange={this.handlePD2Pericial}
                 KeyboardButtonProps={{
@@ -1156,7 +1148,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Inspeccion Judicial"
+                label="*Inspeccion Judicial"
                 value={this.state.fechaPD2InspJudic}
                 onChange={this.handlePD2InspJudic}
                 KeyboardButtonProps={{
@@ -1171,7 +1163,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Recons. de Hechos"
+                label="*Reconstruccion de Hechos"
                 value={this.state.fechaPD2RecHechos}
                 onChange={this.handlePD2RecHechos}
                 KeyboardButtonProps={{
@@ -1186,7 +1178,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Ratif. Contenido y Firma"
+                label="*Ratificacion Contenido y Firma"
                 value={this.state.fechaPD2RatifContFir}
                 onChange={this.handlePD2RatifContFir}
                 KeyboardButtonProps={{
@@ -1244,7 +1236,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Apertura Alegatos"
+                label="Apertura Alegatos"
                 value={this.state.fechaApertuAleg}
                 onChange={this.handleApertAleg}
                 KeyboardButtonProps={{
@@ -1289,7 +1281,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Citacion Sentencia"
+                label="Citacion Sentencia"
                 value={this.state.fechaCitaSent}
                 onChange={this.handleCitSen}
                 KeyboardButtonProps={{
@@ -1334,7 +1326,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Sentencia Definitiva"
+                label="Sentencia Definitiva"
                 value={this.state.fechaSentDefin}
                 onChange={this.handleSentDef}
                 KeyboardButtonProps={{
@@ -1420,7 +1412,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Present. Rec. Apel."
+                label="*Presentacion Rec. Apel."
                 value={this.state.fechaPresentRecApe}
                 onChange={this.handlePresRecApel}
                 KeyboardButtonProps={{
@@ -1465,7 +1457,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Reso. Segu. Inst."
+                label="Reso. Segu. Inst."
                 value={this.state.fechaResSegInst}
                 onChange={this.handleResSegInst}
                 KeyboardButtonProps={{
@@ -1551,7 +1543,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Present. Amparo"
+                label="*Presentacion Amparo"
                 value={this.state.fechaPresentAmp}
                 onChange={this.handlePresentAmp}
                 KeyboardButtonProps={{
@@ -1596,7 +1588,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Ejecutoria Amp."
+                label="Ejecutoria Amparo"
                 value={this.state.fechaEjecAmp}
                 onChange={this.handleEjecAmp}
                 KeyboardButtonProps={{
@@ -1682,7 +1674,7 @@ class Etapa3Merc extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Cumplimentadora"
+                label="Cumplimentadora"
                 value={this.state.fechaCumplim}
                 onChange={this.handleCumplim}
                 KeyboardButtonProps={{

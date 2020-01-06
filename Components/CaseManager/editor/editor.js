@@ -366,17 +366,6 @@ class EditorComponent extends React.Component {
                 </IconButton>
               ) : null}*/}
             </div>
-            <TextField
-              label="Monto/Cuantia"
-              value={this.state.monto}
-              onChange={e => this.updateFianza(e.target.value)}
-              InputProps={{
-                inputComponent: NumberFormatCustom
-              }}
-              className={classes.textField}
-              margin="normal"
-              variant="outlined"
-            />
             {/*<TextField
               label="Contrato Prst. Serv."
               value={this.state.contrato}
@@ -412,6 +401,17 @@ class EditorComponent extends React.Component {
                 />
               </FormGroup>
             </FormControl>
+            <TextField
+              label="Monto/Cuantia"
+              value={this.state.monto}
+              onChange={e => this.updateFianza(e.target.value)}
+              InputProps={{
+                inputComponent: NumberFormatCustom
+              }}
+              className={classes.textField}
+              margin="normal"
+              variant="outlined"
+            />
             <TextField
               label="Honorarios"
               value={this.state.honorarios}
@@ -475,6 +475,7 @@ class EditorComponent extends React.Component {
                   <Switch
                     checked={this.state.estado == 1}
                     onChange={this.updateInactivo}
+                    color="primary"
                   />
                 }
                 label={this.state.estado == 1 ? "Activado" :  "Desactivado" }

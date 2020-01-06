@@ -124,7 +124,7 @@ class Etapa2 extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha de Admision."
+                label="Admision."
                 value={this.state.fechaAdmis}
                 onChange={this.handleAdmision}
                 KeyboardButtonProps={{
@@ -169,7 +169,7 @@ class Etapa2 extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Informe via Electr."
+                label="*Informe via Electronico"
                 value={this.state.fechaInfoViaElect}
                 onChange={this.handleInfoElectr}
                 KeyboardButtonProps={{
@@ -214,7 +214,7 @@ class Etapa2 extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="*Fecha Audiencia Concil."
+                label="*Audiencia Conciliatoria"
                 value={this.state.fechaAudConcil}
                 onChange={this.handleAudieConci}
                 KeyboardButtonProps={{
@@ -259,7 +259,7 @@ class Etapa2 extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Info. Adicional"
+                label="Informe Adicional"
                 value={this.state.fechaPrestInofAd}
                 onChange={this.handlePrestInofAd}
                 KeyboardButtonProps={{
@@ -304,7 +304,7 @@ class Etapa2 extends React.Component {
                 format="dd/MM/yyyy"
                 margin="normal"
                 id="date-picker-inline"
-                label="Fecha Audiencia Final"
+                label="Audiencia Final"
                 value={this.state.fechaAudienFinal}
                 onChange={this.handleAudienFinal}
                 KeyboardButtonProps={{

@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AddIcon from "@material-ui/icons/Add";
+import Typography from "@material-ui/core/Typography";
 import { Divider, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -37,7 +38,23 @@ export default function CustomizedInputBase(props) {
 
   return (
     <div style={{spacing: "15px"}}>
-      <div style={{width: "100%", display: "flex", justifyContent: "flex-end"}}>
+    <div style={{
+              width: "100%",
+              display: "flex",
+            }}>
+          <div style={{
+              width: "50%",
+              display: "flex",
+              justifyContent: "flex-start"
+            }}>
+           <Typography 
+            style={{}}
+            variant="h5" 
+            gutterBottom>
+              Casos
+            </Typography>
+          </div>
+      <div style={{width: "50%", display: "flex", justifyContent: "flex-end"}}>
         <Paper className={classes.root}>
           <InputBase
             className={classes.input}
@@ -58,6 +75,7 @@ export default function CustomizedInputBase(props) {
         >
           Nuevo
         </Button>
+      </div>
       </div>
       <Paper square style={{ width: "100%", marginTop: "10px" }}>
         <Tabs

@@ -54,7 +54,7 @@ class App extends React.Component {
                 variant="contained"
                 color="primary"
               >
-                Casos
+                Lista de Casos
               </Button>
             </Box>
             <MultiStep

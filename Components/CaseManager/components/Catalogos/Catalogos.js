@@ -21,6 +21,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import Typography from "@material-ui/core/Typography";
 import { Divider, Button } from "@material-ui/core";
 const firebase = require("firebase");
 require("firebase/firestore");
@@ -179,9 +180,25 @@ class Catalogos extends React.Component {
     return (
       <div>
         <div style={{ spacing: "15px" }}>
+        <div style={{
+              width: "100%",
+              display: "flex",
+            }}>
+          <div style={{
+              width: "50%",
+              display: "flex",
+              justifyContent: "flex-start"
+            }}>
+           <Typography 
+            style={{}}
+            variant="h5" 
+            gutterBottom>
+              Catalogos
+            </Typography>
+          </div>
           <div
             style={{
-              width: "100%",
+              width: "50%",
               display: "flex",
               justifyContent: "flex-end"
             }}
@@ -206,6 +223,7 @@ class Catalogos extends React.Component {
             >
               Nuevo
             </Button>
+          </div>
           </div>
           <Paper square style={{ width: "100%", marginTop: "10px" }}>
             <Tabs

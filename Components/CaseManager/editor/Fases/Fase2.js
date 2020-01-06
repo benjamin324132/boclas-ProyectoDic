@@ -79,9 +79,7 @@ class Etapa2 extends React.Component {
     this.setState({ fechaAdmis: date });
   }
   handleInfoElectr(date) {
-   
-      this.setState({ fechaInfoViaElect: date, fechaIVEDatabase: date });
-   
+    this.setState({ fechaInfoViaElect: date, fechaIVEDatabase: date });
   }
   handleAudieConci(date) {
     this.setState({ fechaAudConcil: date, fechaACDatabase: date });
@@ -100,30 +98,24 @@ class Etapa2 extends React.Component {
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Grid //direction="column" justify="flex-start" alignItems="flex-start"
           >
-           <div style={{ width: "100%", display: "flex"}}>
-            <TextField
-              id="outlined-name"
-              label="Numero del Siniestro"
-              style={{ marginRight:"10px"}}
-              value={this.state.numExped}
-              onChange={e => this.setState({ numExped: e.target.value })}
-              margin="normal"
-              variant="outlined"
-            />
-            <TextField
-              id="outlined-name"
-              label="Condusef"
-              value={this.state.condusef}
-              onChange={e => this.setState({ condusef: e.target.value })}
-              margin="normal"
-              variant="outlined"
-            />
-           {/* <Autocomplete
-              update={this.updateCondusef}
-              datosAutoc={datosAutoc ? datosAutoc.filter(i => i.seccion === "tribunales") : null }
-              text={this.state.condusef}
-              nameFiled={"Condusef"}
-            />*/}
+            <div style={{ width: "100%", display: "flex" }}>
+              <TextField
+                id="outlined-name"
+                label="Numero del Siniestro"
+                style={{ marginRight: "10px" }}
+                value={this.state.numExped}
+                onChange={e => this.setState({ numExped: e.target.value })}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                id="outlined-name"
+                label="Condusef"
+                value={this.state.condusef}
+                onChange={e => this.setState({ condusef: e.target.value })}
+                margin="normal"
+                variant="outlined"
+              />
             </div>
             <div>
               <KeyboardDatePicker
@@ -352,17 +344,30 @@ class Etapa2 extends React.Component {
             </div>
           </Grid>
         </MuiPickersUtilsProvider>
-        <Button
-          onClick={this.consluir}
-          style={{ margin: "6px" }}
-          variant="contained"
-          color="primary"
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-end"
+          }}
         >
-          Concluir
-        </Button>
-        <Button onClick={this.save} variant="contained" color="primary">
-          Guardar
-        </Button>
+          <Button
+            onClick={this.consluir}
+            style={{ margin: "6px" }}
+            variant="contained"
+            color="primary"
+          >
+            Concluir
+          </Button>
+          <Button
+            onClick={this.save}
+            style={{ margin: "6px" }}
+            variant="contained"
+            color="primary"
+          >
+            Guardar
+          </Button>
+        </div>
         <div>
           <Dialog
             open={this.state.open}
@@ -373,6 +378,7 @@ class Etapa2 extends React.Component {
               consluir={this.consluir}
               descr={this.state.descr}
               guardarConclusion={this.guardarConclusion}
+              text={"Motivo de Conclusion"}
               setDescr={this.setDescr}
             />
           </Dialog>
@@ -404,32 +410,32 @@ class Etapa2 extends React.Component {
     this.setState({ descr: e.target.value });
   };
   save = async () => {
-
-if (this.state.fechaIVEDatabase) {
-         firebase
-          .firestore()
-          .collection("fechas")
-          .doc(`${this.props.selectedNote.title}idIVED`).set({
-            text: `Caso ${
-              this.props.selectedNote.title
-            } Fecha Informe via Electronico`,
-            fecha: this.state.fechaIVEDatabase,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-          });
-      }
-     if (this.state.fechaACDatabase) {
-          firebase
-          .firestore()
-          .collection("fechas")
-          .doc(`${this.props.selectedNote.title}idACD`).set({
-              text: `Caso ${
-              this.props.selectedNote.title
-            } Fecha Audiencia Conciliatora`,
-            fecha: this.state.fechaACDatabase,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-          });
-
-     }
+    if (this.state.fechaIVEDatabase) {
+      firebase
+        .firestore()
+        .collection("fechas")
+        .doc(`${this.props.selectedNote.title}idIVED`)
+        .set({
+          text: `Caso ${
+            this.props.selectedNote.title
+          } Fecha Informe via Electronico`,
+          fecha: this.state.fechaIVEDatabase,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+    }
+    if (this.state.fechaACDatabase) {
+      firebase
+        .firestore()
+        .collection("fechas")
+        .doc(`${this.props.selectedNote.title}idACD`)
+        .set({
+          text: `Caso ${
+            this.props.selectedNote.title
+          } Fecha Audiencia Conciliatora`,
+          fecha: this.state.fechaACDatabase,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+    }
     await firebase
       .firestore()
       .collection("notes")

@@ -939,6 +939,11 @@ class Etapa3Oral extends React.Component {
             </div>
           </Grid>
         </MuiPickersUtilsProvider>
+        <div style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end"
+            }}>
         <Button
           onClick={this.consluir}
           style={{ margin: "6px" }}
@@ -947,9 +952,14 @@ class Etapa3Oral extends React.Component {
         >
           Concluir
         </Button>
-        <Button onClick={this.save} variant="contained" color="primary">
+        <Button onClick={this.save}
+        style={{ margin: "6px" }}
+            variant="contained"
+            color="primary"
+          >
           Guardar
         </Button>
+        </div>
         <div>
           <Dialog
             open={this.state.open}
@@ -960,6 +970,7 @@ class Etapa3Oral extends React.Component {
               consluir={this.consluir}
               descr={this.state.descr}
               guardarConclusion={this.guardarConclusion}
+              text={'Motivo de Conclusion'}
               setDescr={this.setDescr}
             />
           </Dialog>

@@ -23,6 +23,7 @@ class Etapa1 extends React.Component {
       id: "",
       created: false,
       numSinsitro: "",
+      nombInsti: "",
       fechaReclamo: null,
       coment1: "",
       fechaRespueRecl: null,
@@ -62,6 +63,7 @@ class Etapa1 extends React.Component {
     this.setState({
       id: data.id,
       numSinsitro: data.numSinsitro,
+      nombInsti: data.nombInsti,
       fechaReclamo: data.fechaReclamo ? data.fechaReclamo.toDate() : null,
       coment1: data.coment1,
       fechaRespueRecl: data.fechaRespueRecl
@@ -118,22 +120,33 @@ class Etapa1 extends React.Component {
 
   render() {
     return (
-      <div style={{}}>
+      <div>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <Grid 
-          //direction="column" 
-          //justify="flex-start" 
+          <Grid
+          //direction="column"
+          //justify="flex-start"
           //alignItems="flex-start"
           >
-            <TextField
-              style={{ display: "felx-start" }}
-              id="outlined-name"
-              label="Numero del Siniestro"
-              value={this.state.numSinsitro}
-              onChange={e => this.setState({ numSinsitro: e.target.value })}
-              margin="normal"
-              variant="outlined"
-            />
+            <div style={{ width: "100%", display: "flex" }}>
+              <TextField
+                style={{ marginRight: "10px" }}
+                id="outlined-name"
+                label="Numero del Siniestro"
+                value={this.state.numSinsitro}
+                onChange={e => this.setState({ numSinsitro: e.target.value })}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                style={{ display: "felx-start" }}
+                id="outlined-name"
+                label="Nombre de Instutucion"
+                value={this.state.nombInsti}
+                onChange={e => this.setState({ nombInsti: e.target.value })}
+                margin="normal"
+                variant="outlined"
+              />
+            </div>
             <div>
               <KeyboardDatePicker
                 disableToolbar
@@ -455,17 +468,30 @@ class Etapa1 extends React.Component {
             </div>
           </Grid>
         </MuiPickersUtilsProvider>
-        <Button
-          onClick={this.consluir}
-          style={{ margin: "6px" }}
-          variant="contained"
-          color="primary"
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-end"
+          }}
         >
-          Concluir
-        </Button>
-        <Button onClick={this.save} variant="contained" color="primary">
-          Guardar
-        </Button>
+          <Button
+            onClick={this.consluir}
+            style={{ margin: "6px" }}
+            variant="contained"
+            color="primary"
+          >
+            Concluir
+          </Button>
+          <Button
+            onClick={this.save}
+            style={{ margin: "6px" }}
+            variant="contained"
+            color="primary"
+          >
+            Guardar
+          </Button>
+        </div>
         <div>
           <Dialog
             open={this.state.open}
@@ -476,6 +502,7 @@ class Etapa1 extends React.Component {
               consluir={this.consluir}
               descr={this.state.descr}
               guardarConclusion={this.guardarConclusion}
+              text={"Motivo de Conclusion"}
               setDescr={this.setDescr}
             />
           </Dialog>
@@ -511,6 +538,7 @@ class Etapa1 extends React.Component {
       .update({
         fase1: {
           numSinsitro: this.state.numSinsitro,
+          nombInsti: this.state.nombInsti,
           fechaReclamo: this.state.fechaReclamo,
           coment1: this.state.coment1,
           fechaRespueRecl: this.state.fechaRespueRecl,

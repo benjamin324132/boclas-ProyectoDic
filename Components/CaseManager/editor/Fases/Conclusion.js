@@ -21,7 +21,7 @@ export default function FormDialog(props) {
   return (
     <div>
 
-        <DialogTitle id="form-dialog-title">Actualizacion del Caso</DialogTitle>
+        <DialogTitle id="form-dialog-title">{props.text}</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Agregue una breve descripcion para el caso.

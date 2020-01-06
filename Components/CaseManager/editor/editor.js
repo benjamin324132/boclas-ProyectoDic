@@ -15,6 +15,9 @@ import PropTypes from "prop-types";
 import NumberFormat from "react-number-format";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 import Dialog from "@material-ui/core/Dialog";
 import Conclusion from "./Fases/Conclusion";
 import AddDialog from "./Fases/AddDialog";
@@ -46,6 +49,32 @@ NumberFormatCustom.propTypes = {
   inputRef: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired
 };
+
+function NumberFormatCustomPercen(props) {
+  const { inputRef, onChange, ...other } = props;
+
+  return (
+    <NumberFormat
+      {...other}
+      getInputRef={inputRef}
+      onValueChange={values => {
+        onChange({
+          target: {
+            value: values.value
+          }
+        });
+      }}
+      thousandSeparator
+      isNumericString
+      prefix="%"
+    />
+  );
+}
+
+NumberFormatCustomPercen.propTypes = {
+  inputRef: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 class EditorComponent extends React.Component {
   constructor() {
     super();
@@ -67,7 +96,7 @@ class EditorComponent extends React.Component {
       addAsunto: false,
       monto: "",
       descripcion: "",
-      contrato: "",
+      contrato: false,
       honorarios: "",
       anticipo: "",
       asignadoA: "",
@@ -257,7 +286,9 @@ class EditorComponent extends React.Component {
                 onCloseAutocomplete={this.onCloseAutocompleteS}
                 datosAutoc={
                   datosAutoc
-                    ? datosAutoc.filter(i => i.seccion === "instituciones").filter(i => i.materia == this.state.ramo)
+                    ? datosAutoc
+                        .filter(i => i.seccion === "instituciones")
+                        .filter(i => i.materia == this.state.ramo)
                     : null
                 }
                 text={this.state.aseguradora}
@@ -344,14 +375,41 @@ class EditorComponent extends React.Component {
               margin="normal"
               variant="outlined"
             />
-            <TextField
+            {/*<TextField
               label="Contrato Prst. Serv."
               value={this.state.contrato}
               onChange={e => this.updateContrato(e.target.value)}
               className={classes.textField}
               margin="normal"
               variant="outlined"
-            />
+            />*/}
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Contrato Prst. Serv.</FormLabel>
+              <FormGroup row>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.contrato}
+                      onChange={e => this.setState({contrato: e.target.checked})}
+                      value="checkedA"
+                      color="primary"
+                    />
+                  }
+                  label="Si"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={!this.state.contrato}
+                      onChange={e => this.setState({contrato: !e.target.checked})}
+                      value="checkedB"
+                      color="primary"
+                    />
+                  }
+                  label="No"
+                />
+              </FormGroup>
+            </FormControl>
             <TextField
               label="Honorarios"
               value={this.state.honorarios}
@@ -359,7 +417,7 @@ class EditorComponent extends React.Component {
               className={classes.textField}
               margin="normal"
               InputProps={{
-                inputComponent: NumberFormatCustom
+                inputComponent: NumberFormatCustomPercen
               }}
               variant="outlined"
             />
@@ -375,7 +433,7 @@ class EditorComponent extends React.Component {
               variant="outlined"
             />
             <TextField
-              label="Asunto Asignado a"
+              label="Caso Asignado a"
               value={this.state.asignadoA}
               onChange={e => this.updateAsignado(e.target.value)}
               className={classes.textField}
@@ -393,7 +451,7 @@ class EditorComponent extends React.Component {
           </Paper>
           <div>
             <TextField
-              label="Motivo de Reclamacion"
+              label="Descripcion del Caso"
               multiline
               rows="5"
               style={{ width: "90%" }}
@@ -404,7 +462,11 @@ class EditorComponent extends React.Component {
               onChange={e => this.updateDesc(e.target.value)}
             />
           </div>
-          <div style={{ display: "flex" }}>
+          <div style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end"
+            }}>
             <FormGroup>
               <FormControlLabel
                 control={
@@ -429,6 +491,7 @@ class EditorComponent extends React.Component {
               consluir={this.consluir}
               descr={this.state.descr}
               guardarConclusion={this.guardarConclusion}
+              text={"Actualizacion del Caso"}
               setDescr={this.setDescr}
             />
           </Dialog>

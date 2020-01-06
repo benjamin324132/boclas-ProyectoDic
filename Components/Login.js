@@ -15,8 +15,9 @@ import firebase from "../firebase";
 
 const styles = theme => ({
   main: {
+    height: "100vh",
     width: "auto",
-    display: "block", // Fix IE 11 issue.
+    display: "block",
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
@@ -26,7 +27,7 @@ const styles = theme => ({
     }
   },
   paper: {
-    marginTop: theme.spacing.unit * 8,
+    //marginTop: theme.spacing.unit * 8,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -34,11 +35,12 @@ const styles = theme => ({
       .spacing.unit * 3}px`
   },
   avatar: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing.unit
+
     //backgroundColor: theme.palette.secondary.main
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing.unit
   },
   submit: {
@@ -49,7 +51,7 @@ const styles = theme => ({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "15px",
+    marginTop: "15px"
   }
 });
 
@@ -60,65 +62,66 @@ function SignIn(props) {
   const [password, setPassword] = useState("");
 
   return (
-    <main className={classes.main}>
-      <Paper className={classes.paper}>
-        <div className={classes.avatar}>
-          <img
-            className={classes.logo}
-            src="https://i.ibb.co/BGCyZq2/LOGO-BOCLAIMS-REGISTRADO.jpg"
-            alt="Boclaims logo"
-          />
-        </div>
-        <form
-          className={classes.form}
-          onSubmit={e => e.preventDefault() && false}
-        >
-          <FormControl margin="normal" required fullWidth>
-            <InputLabel htmlFor="email">Email</InputLabel>
-            <Input
-              id="email"
-              name="email"
-              autoComplete="off"
-              autoFocus
-              value={email}
-              onChange={e => setEmail(e.target.value)}
+    <div
+      style={{
+        backgroundImage:
+          "url(https://i.ibb.co/F8yrd5g/188a54d2-e0af-4083-bea9-f3008045a5bc.jpg)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
+      <div>
+      <main className={classes.main}>
+        <Paper className={classes.paper}>
+          <div className={classes.avatar}>
+            <img
+              className={classes.logo}
+              src="https://i.ibb.co/BGCyZq2/LOGO-BOCLAIMS-REGISTRADO.jpg"
+              alt="Boclaims logo"
             />
-          </FormControl>
-          <FormControl margin="normal" required fullWidth>
-            <InputLabel htmlFor="password">Contrasena</InputLabel>
-            <Input
-              name="password"
-              type="password"
-              id="password"
-              autoComplete="off"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </FormControl>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            onClick={login}
-            className={classes.submit}
+          </div>
+          <form
+            className={classes.form}
+            onSubmit={e => e.preventDefault() && false}
           >
-            Iniciar
-          </Button>
-          {/*<Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            component={Link}
-            to="/register"
-            className={classes.submit}
-          >
-            Registrarse
-          </Button>*/}
-        </form>
-      </Paper>
-    </main>
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="email">Email</InputLabel>
+              <Input
+                id="email"
+                name="email"
+                autoComplete="off"
+                autoFocus
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </FormControl>
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="password">Contrasena</InputLabel>
+              <Input
+                name="password"
+                type="password"
+                id="password"
+                autoComplete="off"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
+            </FormControl>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              onClick={login}
+              className={classes.submit}
+            >
+              Iniciar
+            </Button>
+          </form>
+        </Paper>
+      </main>
+      </div>
+    </div>
   );
 
   async function login() {
@@ -132,3 +135,16 @@ function SignIn(props) {
 }
 
 export default withRouter(withStyles(styles)(SignIn));
+{
+  /*<Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            component={Link}
+            to="/register"
+            className={classes.submit}
+          >
+            Registrarse
+          </Button>*/
+}

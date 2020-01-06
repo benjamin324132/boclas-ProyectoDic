@@ -101,7 +101,7 @@ class Etapa2 extends React.Component {
             <div style={{ width: "100%", display: "flex" }}>
               <TextField
                 id="outlined-name"
-                label="Numero del Siniestro"
+                label="Numero del Expedirnte"
                 style={{ marginRight: "10px" }}
                 value={this.state.numExped}
                 onChange={e => this.setState({ numExped: e.target.value })}

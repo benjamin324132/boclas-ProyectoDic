@@ -85,11 +85,11 @@ class SidebarComponent extends React.Component {
                   <h4 className={classes.itemText} style={{ width: "7%" }}>
                     Etapa
                   </h4>
-                  <h4 className={classes.itemText} style={{ width: "8%" }}>
+                  {/*<h4 className={classes.itemText} style={{ width: "8%" }}>
                     Actualizado
-                  </h4>
-                  <h4 className={classes.itemText} style={{ width: "19%" }}>
-                    Descripcion
+                  </h4>*/}
+                  <h4 className={classes.itemText} style={{ width: "27%" }}>
+                    Actualizado
                   </h4>
                 </div>
               </ListItem>

@@ -43,11 +43,11 @@ class SidebarItemComponent extends React.Component {
             <h4 className={classes.itemText} style={{ width: "7%" }}>
               {_note.etapa}
             </h4>
-            <h4 className={classes.itemText} style={{ width: "8%" }}>
+            {/*<h4 className={classes.itemText} style={{ width: "8%" }}>
               {updated} 
-             </h4>
-            <h4 className={classes.itemText} style={{ width: "19%" }}>
-              {_note.descr}
+             </h4>*/}
+            <h4 className={classes.itemText} style={{ width: "27%" }}>
+              {updated}-{_note.descr}
             </h4>
           </div>
           <DeleteIcon

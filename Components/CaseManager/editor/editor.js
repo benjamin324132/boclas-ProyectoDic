@@ -41,6 +41,8 @@ function NumberFormatCustom(props) {
       thousandSeparator
       isNumericString
       prefix="$"
+      decimalScale={2}
+      fixedDecimalScale={true}
     />
   );
 }
@@ -471,11 +473,11 @@ class EditorComponent extends React.Component {
               <FormControlLabel
                 control={
                   <Switch
-                    checked={this.state.estado == 2}
+                    checked={this.state.estado == 1}
                     onChange={this.updateInactivo}
                   />
                 }
-                label={this.state.estado == 2 ? "Desactivado" : "Activado"}
+                label={this.state.estado == 1 ? "Activado" :  "Desactivado" }
               />
             </FormGroup>
             <Button onClick={this.save} variant="contained" color="primary">
@@ -491,7 +493,7 @@ class EditorComponent extends React.Component {
               consluir={this.consluir}
               descr={this.state.descr}
               guardarConclusion={this.guardarConclusion}
-              text={"Actualizacion del Caso"}
+              text={this.state.estado == 2 ? "Desactivacion del Caso" : "Activacion del Caso"}
               setDescr={this.setDescr}
             />
           </Dialog>

@@ -305,6 +305,7 @@ class Reportes extends React.Component {
           filterType: "custom",
           customFilterListOptions: {
             render: v => {
+              if(v){
               if (v[0] && v[1]) {
                 return [
                   `Min: ${moment(v[0]).format("MM-DD-YYYY")}`,
@@ -318,6 +319,7 @@ class Reportes extends React.Component {
                 return `Min: ${moment(v[0]).format("MM-DD-YYYY")}`;
               } else if (v[1]) {
                 return `Max: ${moment(v[1]).format("MM-DD-YYYY")}`;
+              }
               }
               return false;
             },

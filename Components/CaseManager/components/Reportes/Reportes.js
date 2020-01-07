@@ -205,14 +205,17 @@ class Reportes extends React.Component {
           },
           customFilterListOptions: {
             render: v => {
-              if (v[0] && v[1] && this.state.ageFilterChecked) {
+              console.log(v)
+              if(v){
+              if (v[0] && v[1] ) {
                 return [`Min: $${v[0]}`, `Max: $${v[1]}`];
-              } else if (v[0] && v[1] && !this.state.ageFilterChecked) {
-                return `Min: $${v[0]}, Max: $${v[1]}`;
+           //   } else if (v[0] && v[1] && !this.state.ageFilterChecked) {
+            //    return `Min: $${v[0]}, Max: $${v[1]}`;
               } else if (v[0]) {
                 return `Min: $${v[0]}`;
               } else if (v[1]) {
                 return `Max: $${v[1]}`;
+              }
               }
               return false;
             },

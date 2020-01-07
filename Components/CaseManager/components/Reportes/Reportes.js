@@ -231,17 +231,20 @@ class Reportes extends React.Component {
             names: [],
             logic(age, filters) {
               if (filters[0] && filters[1]) {
-                filters[0] = filters[0].replace(/\$/g, "");
-                filters[1] = filters[1].replace(/\$/g, "");
-                age = age.replace(/\$/g, "");
+                filters[0] = filters[0].replace(/\$|,/g, "");
+                filters[1] = filters[1].replace(/\$|,/g, "");
+                age = age.replace(/\$|,/g, "");
+                console.log("monto 1",filters[0],filters[1], age)
                 return age < filters[0] || age > filters[1];
               } else if (filters[0]) {
-                filters[0] = filters[0].replace(/\$/g, "");
-                age = age.replace(/\$/g, "");
+                filters[0] = filters[0].replace(/\$|,/g, "");
+                age = age.replace(/\$|,/g, "");
+                console.log("monto 2",filters[0], age)
                 return age < filters[0];
               } else if (filters[1]) {
-                filters[1] = filters[1].replace(/\$/g, "");
-                age = age.replace(/\$/g, "");
+                filters[1] = filters[1].replace(/\$|,/g, "");
+                age = age.replace(/\$|,/g, "");
+                console.log("monto 3",filters[1], age)
                 return age > filters[1];
               }
               return false;
@@ -510,6 +513,7 @@ class Reportes extends React.Component {
   };
   //****************************************************** */
   render() {
+    console.log(this.state.tableStatePersist)
     const { classes } = this.props;
     const { filteredCasos } = this.state;
     if (this.state.casos) {
